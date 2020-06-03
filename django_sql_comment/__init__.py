@@ -1,4 +1,5 @@
 from django.apps import apps
+from django.contrib.postgres.fields import ArrayField
 from django.db import DEFAULT_DB_ALIAS, connections, router, transaction
 from django.utils.encoding import force_text
 from django.utils.text import camel_case_to_spaces
@@ -28,7 +29,13 @@ def sqlcomment_statements(app_config, using=DEFAULT_DB_ALIAS):
                       comment or None)
             for f in model._meta.fields:
                 strings = (('' if field_name_is_auto(f) else f.verbose_name),
-                           f.help_text)
+                           f.help_text,
+                           (('' if field_name_is_auto(f.base_field)
+                             else f.base_field.verbose_name)
+                            if isinstance(f, ArrayField) else ''),
+                           (f.base_field.help_text if isinstance(f, ArrayField)
+                            else ''),)
+
                 comment = ' | '.join(map(force_text, filter(None, strings)))
                 yield out('COMMENT ON COLUMN "{}"."{}" IS %s'
                           .format(table, f.column),
