@@ -5,7 +5,7 @@ from django.utils.encoding import force_text
 from django.utils.text import camel_case_to_spaces
 
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 def field_name_is_auto(field):
