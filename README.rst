@@ -3,6 +3,13 @@ Django SQL COMMENT
 
 Django management command to generate SQL for applying your models' and fields' ``verbose_name`` and ``help_text`` as PostgreSQL ``COMMENT`` statements.
 
+Compatibility
+-------------
+
+Python 2.7–3.11.
+
+Django 1.11–4.2.
+
 Quickstart
 ----------
 

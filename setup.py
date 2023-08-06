@@ -9,7 +9,7 @@ except ImportError:
     from distutils.core import setup
 
 
-version = '0.0.3'
+version = '1.0.0'
 
 
 if sys.argv[-1] == 'publish':
@@ -50,9 +50,13 @@ setup(
     zip_safe=False,
     keywords='django-sql-comment',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Framework :: Django :: 1.11',
-        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2',
+        'Framework :: Django :: 3',
+        'Framework :: Django :: 4.0',
+        'Framework :: Django :: 4.1',
+        'Framework :: Django :: 4.2',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 2',
@@ -61,5 +65,12 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Topic :: Database',
+        'Topic :: Software Development :: Documentation',
     ],
 )
